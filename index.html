@@ -152,7 +152,21 @@
   <div data-role="header">
     <h1>Contato</h1>
   </div>
-  <div data-role="content"> Conte&uacute;do </div>
+  <div data-role="content">
+  <div id="contatoResult"></div>
+    <script> 
+  		$(document).delegate('.ui-page', 'pageshow', function () {
+    		$.ajax({
+				url:URL+"/app/PHP/email.php",
+				type:"GET",
+				success:function(result){
+    			$("#contatoResult").html(result);
+				$(document).listview().trigger("create"); /*refresh css*/
+				}
+			});
+    	});
+    </script>    
+  </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
