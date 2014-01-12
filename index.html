@@ -125,7 +125,7 @@
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
 </div>
-<div data-role="page" id="maps" data-theme="b">
+<div data-role="page" id="maps" data-theme="b" data-fullscreen="true">
   <div data-role="header">
     <h1>Google Maps</h1>
   </div>
@@ -145,14 +145,14 @@
     </script>    
   </div>
   <div data-role="footer">
-    <h4>P&aacute;gina de rodap&eacute;</h4>
+
   </div>
 </div>
 <div data-role="page" id="contato" data-theme="b">
   <div data-role="header">
     <h1>Contato</h1>
   </div>
-  <div data-role="content">
+  <div data-role="content" style="height:100%; width: 100%; position: absolute">
   <div id="contatoResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
