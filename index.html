@@ -4,10 +4,9 @@
 <meta charset="iso-8859-1">
 <title>Aplicativo Android Mobile</title>
 <link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
-
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
-
+<script src="js/funcoes.js" type="text/javascript"></script>
 </head>
 <body>
 <div data-role="page" id="page">
@@ -39,7 +38,7 @@
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
-				url:"http://www.mauricioramos.com.br/wp/teste.php",
+				url:"http://www.artusrosa.com.br/app/PHP/result.php",
 				type:"GET",
 				success:function(result){
     			$("#vendasResult").html(result);
@@ -65,7 +64,21 @@
   <div data-role="header">
     <h1>Busca</h1>
   </div>
-  <div data-role="content"></div>
+  <div data-role="content">
+  <div id="buscaResult"></div>
+    <script> 
+  		$(document).delegate('.ui-page', 'pageshow', function () {
+    		$.ajax({
+				url:"http://www.artusrosa.com.br/app/PHP/busca.php",
+				type:"GET",
+				success:function(result){
+    			$("#buscaResult").html(result);
+				ajaxBairros();
+				}
+			});
+    	});
+    </script>   
+  </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
@@ -74,7 +87,20 @@
   <div data-role="header">
     <h1>Empresa </h1>
   </div>
-  <div data-role="content"> Conte&uacute;do </div>
+  <div data-role="content">
+  <div id="empresaResult"></div>
+    <script> 
+  		$(document).delegate('.ui-page', 'pageshow', function () {
+    		$.ajax({
+				url:"http://www.artusrosa.com.br/app/PHP/empresa.php",
+				type:"GET",
+				success:function(result){
+    			$("#empresaResult").html(result);
+				}
+			});
+    	});
+    </script>   
+  </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
@@ -92,7 +118,20 @@
   <div data-role="header">
     <h1>Google Maps</h1>
   </div>
-  <div data-role="content"> Conte&uacute;do </div>
+  <div data-role="content">
+  <div id="mapsResult"></div>
+    <script> 
+  		$(document).delegate('.ui-page', 'pageshow', function () {
+    		$.ajax({
+				url:"http://www.artusrosa.com.br/app/PHP/mapa.php",
+				type:"GET",
+				success:function(result){
+    			$("#mapsResult").html(result);
+				}
+			});
+    	});
+    </script>    
+  </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
