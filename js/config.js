@@ -1,0 +1,1 @@
+var URL = "http://www.artusrosa.com.br"; /*http://www.nomedosite.com.br*/
