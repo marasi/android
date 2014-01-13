@@ -3,18 +3,15 @@
 <head>
 <meta charset="iso-8859-1">
 <title>Aplicativo Android Mobile</title>
-
 <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.4.0.min.css">
 <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.theme-1.4.0.min.css">
 <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.structure-1.4.0.min.css">
 <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.icons-1.4.0.min.css">
 <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.inline-png-1.4.0.min.css">
-
 <script src="js/config.js"></script>
 <script src="jquery-mobile/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.4.0.min.js"></script>
 <script src="js/funcoes.js" type="text/javascript"></script>
-
 </head>
 <body>
 <div data-role="page" id="page" data-theme="b">
@@ -37,12 +34,11 @@
   </div>
 </div>
 <div data-role="page" id="vendas" data-theme="b" >
-  <div data-role="header">
-  	<a href="index.html" data-icon="home">Home</a>
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Vendas</h1>
   </div>
-  <div data-role="content"> 
-  <div id="vendasResult"></div>
+  <div data-role="content">
+    <div id="vendasResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
@@ -61,7 +57,7 @@
   </div>
 </div>
 <div data-role="page" id="alugueis" data-theme="b">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Alugu&eacute;is</h1>
   </div>
   <div data-role="content"> Conte&uacute;do </div>
@@ -70,11 +66,11 @@
   </div>
 </div>
 <div data-role="page" id="busca" data-theme="b">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Busca</h1>
   </div>
   <div data-role="content">
-  <div id="buscaResult"></div>
+    <div id="buscaResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
@@ -87,18 +83,18 @@
 				}
 			});
     	});
-    </script>   
+    </script> 
   </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
 </div>
 <div data-role="page" id="empresa" data-theme="b">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Empresa </h1>
   </div>
   <div data-role="content">
-  <div id="empresaResult"></div>
+    <div id="empresaResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
@@ -110,14 +106,14 @@
 				}
 			});
     	});
-    </script>   
+    </script> 
   </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
   </div>
 </div>
 <div data-role="page" id="anuncie" data-theme="b">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Anuncie</h1>
   </div>
   <div data-role="content"> Conte&uacute;do </div>
@@ -126,11 +122,11 @@
   </div>
 </div>
 <div data-role="page" id="maps" data-theme="b" data-fullscreen="true">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Google Maps</h1>
   </div>
   <div data-role="content">
-  <div id="mapsResult"></div>
+    <div id="mapsResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
@@ -142,18 +138,16 @@
 				}
 			});
     	});
-    </script>    
+    </script> 
   </div>
-  <div data-role="footer">
-
-  </div>
+  <div data-role="footer"> </div>
 </div>
 <div data-role="page" id="contato" data-theme="b">
-  <div data-role="header">
+  <div data-role="header"> <a href="index.html" data-icon="home">Home</a>
     <h1>Contato</h1>
   </div>
-  <div data-role="content" style="height:100%; width: 100%; position: absolute">
-  <div id="contatoResult"></div>
+  <div data-role="content">
+    <div id="contatoResult"></div>
     <script> 
   		$(document).delegate('.ui-page', 'pageshow', function () {
     		$.ajax({
@@ -165,7 +159,7 @@
 				}
 			});
     	});
-    </script>    
+    </script> 
   </div>
   <div data-role="footer">
     <h4>P&aacute;gina de rodap&eacute;</h4>
