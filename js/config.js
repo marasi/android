@@ -1,1 +1,1 @@
-var URL = "http://www.artusrosa.com.br"; /*http://www.nomedosite.com.br*/
+var URL = "http://www.imoveispraiars.com.br"; /*http://www.nomedosite.com.br*/

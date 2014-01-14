@@ -18,6 +18,33 @@ function ajaxBairros() {
 	});
 }
 
+function loadResult(){ 
+	/*autoload */ 
+	var track_load = 1;                      
+	var loading  = false;                    
+	var total_groups = 91; 
+
+	$(window).scroll(function() { 
+		if($(window).scrollTop() + $(window).height() == $(document).height()){ 
+			if(track_load <= total_groups && loading==false){        
+				loading = true;                    
+				$('.loading_image').show();               
+				$.post(URL+"/app/PHP/result.php",{'groupNo': track_load}, function(data){
+					$("#buscaResult").append(data).trigger("create");    
+					$('.loading_image').hide();                    
+					track_load++;  
+					                                  
+					loading = false; 
+				}).fail(function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError);                          
+					  $('.loading_image').hide();
+					loading = false;
+				});
+			 }
+		 }
+    });
+}
+
 function pesquisar(){
 	
 	var bT = $("#tipo").val();
@@ -29,11 +56,11 @@ function pesquisar(){
 	
  	$.ajax({
 		  url:URL+"/app/PHP/result.php",
-		  data: "{'bT':'" + bT+ "', 'bM':'" + bM+ "', 'bL':'" + bL+ "', 'bB':'" + bB+ "', 'bV':'" + bV+ "', 'bC':'" + bC+ "'}",
-		  async:"true", 
+		  data: {'bT':bT, 'bM':bM, 'bL':bL, 'bB':bB, 'bV':bV, 'bC':bC, 'groupNo': 0},
 		  type:"POST", 
 		  success: function(result){
 			  $("#buscaResult").html(result);
+			  loadResult();
 			  $(document).listview().trigger("create"); /*refresh css*/
 		  }, 
 		  error: function (xhr, status, error) {
