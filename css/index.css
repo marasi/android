@@ -1,16 +1,41 @@
 @charset "iso-8859-1";
 /* CSS Document */
+#debug{
+	top:20px;
+	border:1px solid red;
+    color:red;
+	background:black;
+    font-size:12px;
+	font-weight:bold;
+    width:80px;
+    height:80px;
+    position:fixed;
+	float:right;
+    display:none;
+	padding:2px;
+    z-index:10000000000000;    
+}
+.popup{
+	height:100px;
+	padding:5px;
+	display:block;
+}
+#resultado{
+/*lupa e total	*/
+	text-align:center;
+}
+#resultado img{
+	vertical-align:middle;
+}
 font{
 	font-size:9px;	
 }
 .resultRow{
-	width:100%;
-	position:relative;
-	display:table;
+	width:auto;
+    padding:0 5px 0 5px;
+    position:relative;
 }
 .foto{
-	border:3px solid white;
-	box-shadow:2px 2px 2px grey;
 	float:left;	
 }
 .infoWrap{
@@ -18,8 +43,10 @@ font{
 	text-decoration:none;
 	font-size:14px;
 	font-weight:bold;
+    table-layout:auto;
+    word-wrap:break-word;
 	color:white;
-	padding-left:20px;
+	padding-left:5px;
 	width:auto;
 	height:100px;
 	float:left;
@@ -37,8 +64,13 @@ font{
 	color:#39F; margin-bottom:0px;
 }
 .breakLine{
-	border-bottom:1px solid grey;
+	border-bottom:1px solid #333;
 	width:100%;
 	height:1px;
 	margin:5px 0 5px 0;
+}
+/*páginas*/
+#empresaResult{
+    padding:20px;
+    text-align:justify;
 }
