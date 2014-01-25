@@ -20,20 +20,19 @@
 <body>
 
 
-
-<div data-role="page" id="page" data-theme="b">
+<div data-role="page" id="menu" data-theme="b">
   <div data-role="header">
     <h1>Mobile App - Alpha</h1>
   </div>
   <div data-role="content">
-    <ul data-role="listview">
-      <li data-icon="shop"><a href="#" onClick="pesquisar('venda')">Vendas</a></li>
-      <li data-icon="tag"><a href="#" onClick="pesquisar('aluguel')">Alugu&eacute;is</a></li>
-      <li data-icon="search"><a href="#busca">Busca</a></li>
-      <li data-icon="star"><a href="#empresa">Empresa</a></li>
-      <li data-icon="info"><a href="#anuncie">Anuncie</a></li>
-      <li data-icon="location"><a href="#maps">Google Maps</a></li>
-      <li data-icon="phone"><a href="#contato">Contato</a></li>
+    <ul data-role="listview" data-inset="true" data-split-theme="b" data-split-icon="plus">
+      <li data-icon="shop"><a href="#" onClick="pesquisar('venda')"><h2>Vendas</h2></a></li>
+      <li data-icon="tag"><a href="#" onClick="pesquisar('aluguel')"><h2>Alugu&eacute;is</h2></a></li>
+      <li data-icon="search"><a href="#busca"><h2>Busca</h2></a></li>
+      <li data-icon="star"><a href="#empresa"><h2>Empresa</h2></a></li>
+      <li data-icon="info"><a href="#anuncie"><h2>Anuncie</h2></a></li>
+      <li data-icon="location"><a href="#maps"><h2>Google Maps</h2></a></li>
+      <li data-icon="phone"><a href="#contato"><h2>Contato</h2></a></li>
     </ul>
   </div>
   <div data-role="footer">
@@ -100,7 +99,7 @@
     <h1>Visualizar Im&oacute;vel</h1>
   </div>
   <div data-role="content">
-	<div id="verMain"></div>  
+	<div id="verResult"></div>  
   </div>
 </div>
 
@@ -112,7 +111,22 @@
   	<div id="showResult"></div> 
   </div>
 </div>
-
+<div data-role="page" id="pFone" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Ligar</h1>
+  </div>
+  <div data-role="content">
+	<div id="foneResult"></div>  
+  </div>
+</div>
+<div data-role="page" id="pMail" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>E-mail</h1>
+  </div>
+  <div data-role="content">
+	<div id="mailResult"></div>  
+  </div>
+</div>
 
 <span id="debug"></span>
 </body>

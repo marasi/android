@@ -114,7 +114,7 @@ function ver(e){
 		data:{'id':e},
         type:"GET",
         success:function(result){
-        $("#verMain").html(result);
+        $("#verResult").html(result);
 		startSlide();	
 		$.mobile.loading('hide');
         $(document).listview().trigger("create"); /*refresh css*/
@@ -213,6 +213,64 @@ $(document).on("pageshow","#contato",function(){
         }
     });
 });
+$(document).on("pageshow","#pFone",function(){
+	$.mobile.loading('show');
+    $.ajax({
+        url:URL+"/app/PHP/fone.php",
+        type:"GET",
+        success:function(result){
+        $("#foneResult").html(result);
+		$.mobile.loading('hide');
+        $(document).listview().trigger("create"); /*refresh css*/
+        }
+    });
+});
 
- 
+function sendId(e){
+	/*seta variável name com o ID*/
+	window.name = e;
+}
 
+$(document).on("pageshow","#pMail",function(){
+	$.mobile.loading('show');
+	/*var id = sessionStorage.getItem("id");*/
+	var id = "11111";
+    $.ajax({
+        url:URL+"/app/PHP/email.php",
+		data:{'id':id},
+        type:"POST",
+        success:function(result){
+        $("#mailResult").html(result);
+		$.mobile.loading('hide');
+        $(document).listview().trigger("create"); /*refresh css*/
+        }
+    });
+});
+
+function enviar(){
+	/*$.mobile.changePage($('#result'), 'pop');*/
+	history.back();
+	$.mobile.loading('show');
+	
+	var a = $("#nome").val();
+	var b = $("#email").val();
+	var c = $("#tel").val();
+	var d = $("input[name=assunto]:checked").val();
+	var e = $("#mensagem").val();
+	var f = window.name;
+
+ 	$.ajax({
+		  url:URL+"/app/PHP/sendEmail.php",
+		  data: {'a':a, 'b':b, 'c':c, 'd':d, 'e':e, 'f':f},
+		  type:"POST", 
+		  success: function(result){			  
+			  alert(result); 	  			 
+			  $.mobile.loading('hide');
+		  }, 
+		  error: function (xhr, status, error) {
+				alert('ERRO:'+error); 
+    	  }
+	  });
+	  return false;
+	  event.preventDefault();	
+}
