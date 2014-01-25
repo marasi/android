@@ -201,6 +201,19 @@ $(document).on("pageshow","#mapa",function(){
     });
 });
 
+$(document).on("pageshow","#contato",function(){
+	$.mobile.loading('show');
+    $.ajax({
+        url:URL+"/app/PHP/contato.php",
+        type:"GET",
+        success:function(result){
+        $("#contatoResult").html(result);
+		$.mobile.loading('hide');
+        $(document).listview().trigger("create"); /*refresh css*/
+        }
+    });
+});
+
 $(document).on("pageshow","#pFone",function(){
 	$.mobile.loading('show');
     $.ajax({

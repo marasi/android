@@ -124,3 +124,19 @@ font{
 #my-listview .ui-li {
     height : 30%;
 }
+
+#contatoBottom{
+	border:0px;
+	width:100%;
+    bottom:40px;
+    position:fixed;
+    z-index:150;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+
+        (document.documentElement.clientHeight-this.offsetHeight)));
+    height:35px;	
+}
+#houseIcon{
+	float:left;
+	margin:10px;
+}
