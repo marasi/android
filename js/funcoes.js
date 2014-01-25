@@ -201,18 +201,6 @@ $(document).on("pageshow","#mapa",function(){
     });
 });
 
-$(document).on("pageshow","#contato",function(){
-	$.mobile.loading('show');
-    $.ajax({
-        url:URL+"/app/PHP/email.php",
-        type:"GET",
-        success:function(result){
-        $("#contatoResult").html(result);
-		$.mobile.loading('hide');
-        $(document).listview().trigger("create"); /*refresh css*/
-        }
-    });
-});
 $(document).on("pageshow","#pFone",function(){
 	$.mobile.loading('show');
     $.ajax({
@@ -233,8 +221,7 @@ function sendId(e){
 
 $(document).on("pageshow","#pMail",function(){
 	$.mobile.loading('show');
-	/*var id = sessionStorage.getItem("id");*/
-	var id = "11111";
+	var id = window.name; /*id storage*/
     $.ajax({
         url:URL+"/app/PHP/email.php",
 		data:{'id':id},
@@ -246,6 +233,10 @@ $(document).on("pageshow","#pMail",function(){
         }
     });
 });
+
+function pContato(){
+	window.name = "contato"; /*set storage to page Email*/	
+}
 
 function enviar(){
 	/*$.mobile.changePage($('#result'), 'pop');*/
@@ -274,3 +265,7 @@ function enviar(){
 	  return false;
 	  event.preventDefault();	
 }
+
+$(function(){
+  $(".input-phone").mask("(99)-9999-9999");    
+});
