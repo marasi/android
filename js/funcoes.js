@@ -107,17 +107,18 @@ function startSlide() {
   });
 }
 
-function ver(e){
+function ver(id,ci){
 	$.mobile.loading('show');
+	$("#verHead").html("Código do Imóvel: " + ci);
     $.ajax({
         url:URL+"/app/PHP/ver.php",
-		data:{'id':e},
+		data:{'id':id},
         type:"GET",
-        success:function(result){
+        success:function(result){			
         $("#verResult").html(result);
 		startSlide();	
 		$.mobile.loading('hide');
-        $(document).listview().trigger("create"); /*refresh css*/
+        $(document).listview().trigger("create");
         }
     });
 }

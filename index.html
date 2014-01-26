@@ -91,20 +91,19 @@
     <h1>Contato</h1>
   </div>
   <div data-role="content">
-  <div id="contatoResult"></div>
-    <table id="contatoBottom">
-      <tr>
-        <td align="center"><a href="#pFone"><div id="fone"></div></a></td>
-        <td align="center"><a href="#pMail" onClick="pContato()"><div id="mail"></div></a></td>
-      </tr>
-    </table>
-     
+  <div id="contatoResult"></div>  
   </div>
+  <table id="contatoBottom" data-role="footer" data-theme="b">
+  <tr>
+    <td align="center"><a href="#pFone"><div id="fone"></div>Telefone</a></td>
+    <td align="center"><a href="#pMail" onClick="pContato()"><div id="mail"></div>E-mail</a></td>
+  </tr>
+</table>
 </div>
 
 <div data-role="page" id="ver" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
-    <h1>Visualizar Im&oacute;vel</h1>
+    <h1 id="verHead">Visualizar Im&oacute;vel</h1>
   </div>
   <div data-role="content">
 	<div id="verResult"></div>  
