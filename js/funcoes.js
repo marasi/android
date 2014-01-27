@@ -109,14 +109,17 @@ function startSlide() {
 
 function ver(id,ci){
 	$.mobile.loading('show');
-	$("#verHead").html("Código do Imóvel: " + ci);
+	$("#verHead").html("Código: " + ci);
     $.ajax({
         url:URL+"/app/PHP/ver.php",
 		data:{'id':id},
         type:"GET",
         success:function(result){			
         $("#verResult").html(result);
-		startSlide();	
+		$(document).ready(function(e) {
+            startSlide();
+        });
+		/*startSlide();*/	
 		$.mobile.loading('hide');
         $(document).listview().trigger("create");
         }
