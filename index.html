@@ -18,6 +18,7 @@
 <script src="jquery-mobile/jquery.mobile-1.4.0.min.js"></script>
 <script src="js/iscroll.js"></script>
 <script src="js/jquery.iscrollview.js"></script>
+<script src="js/jquery.iscrollview.pull.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/funcoes.js" type="text/javascript"></script>
@@ -113,13 +114,21 @@
   </div>
 </div>
 
-<div data-role="page" id="result" data-theme="b">
+<div data-role="page" id="result" data-theme="b" >
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Resultado da Busca</h1>
   </div>
-  <div data-role="content" data-iscroll>
-  	<div id="showResult"></div> 
-  </div>
+  
+    <div data-iscroll="" data-role="content">
+    <div id="showResult">
+    </div>
+    <div class="iscroll-pullup">
+    	<span class="iscroll-pull-icon"></span>
+    	<span class="iscroll-pull-label" data-iscroll-loading-text="Custom loading text" data-iscroll-pulled-text="Custom pulled text">Carregando...</span>
+    </div>
+    </div>
+    
+
 </div>
 <div data-role="page" id="pFone" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>

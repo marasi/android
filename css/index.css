@@ -89,6 +89,7 @@ font{
 	background-image:url(../images/phone.png);
 	background-repeat:no-repeat;
 	text-decoration:none;
+	margin:0 auto;
 }
 
 #mail{
@@ -97,7 +98,8 @@ font{
 	height:60px;
 	background-image:url(../images/mail.png);
 	background-repeat:no-repeat;
-	text-decoration:none;	
+	text-decoration:none;
+	margin:0 auto;	
 }
 .op img{
 	vertical-align:middle;
