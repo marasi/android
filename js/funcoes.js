@@ -1,3 +1,12 @@
+$.ajaxSetup({
+    timeout: 1, // Microseconds, for the laughs.  Guaranteed timeout.
+    error: function(request, status, maybe_an_exception_object) {
+        if(status == 'timeout')
+            alert("ERRO: Sem conex\u00e3o com a Internet!");
+			navigator.app.exitApp();			
+    }
+});
+
 function buscaCi() {
 var Ci = document.getElementById("busca_ci").value;
 	if(!Ci){
@@ -255,9 +264,9 @@ function pContato(){
 	window.name = "contato"; /*set storage to page Email*/	
 }
 
+/*E-mail*/
 function enviar(){
-	/*$.mobile.changePage($('#result'), 'pop');*/
-	history.back();
+	/*$.mobile.changePage($('#result'), 'pop');*/	
 	$.mobile.loading('show');
 	
 	var a = $("#nome").val();
@@ -266,6 +275,50 @@ function enviar(){
 	var d = $("input[name=assunto]:checked").val();
 	var e = $("#mensagem").val();
 	var f = window.name;
+
+	if(a == ""){
+		alert("Digite seu nome!");
+		$("#nome").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+	if(b == ""){
+		alert("Digite seu e-mail!");
+		$("#email").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+		parte1 = $("#email").val().indexOf('@');
+		parte2 = $("#email").val().indexOf(".");
+		parte3 = $("#email").val().length;
+		if (!(parte1 >= 3 && parte2 >= 6 && parte3 >= 9)) {
+			alert ("Digite um e-mail válido!");
+			$("#email").focus();
+			$.mobile.loading('hide');
+			return false;
+		}	
+	if(c == ""){
+		alert("Digite seu Telefone!");
+		$("#tel").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+		var tel = c.valueOf().replace(/[_\W]+/g, "");
+		var len = tel.substring(6,10);//verifica se são números os últimos 4
+		if (len == 0 || isNaN(tel) || tel.length != 10){ 
+			alert(tel+"Digite um número de telefone válido!");
+			$("#tel").focus();
+			$.mobile.loading('hide');
+			return false;
+		}	
+	if(e == ""){
+		alert("Digite sua mensagem!");
+		$("#mensagem").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+	
+	history.back();
 
  	$.ajax({
 		  url:URL+"/app/PHP/sendEmail.php",
@@ -283,6 +336,76 @@ function enviar(){
 	  event.preventDefault();	
 }
 
-$(function(){
-  $(".input-phone").mask("(99)-9999-9999");    
-});
+/*Anunciar*/
+function enviarA(){
+	/*$.mobile.changePage($('#result'), 'pop');*/	
+	$.mobile.loading('show');
+	
+	var a = $("#nomeA").val();
+	var b = $("#emailA").val();
+	var c = $("#telA").val();
+	var d = 'Pedido de Cadastro';
+	var e = $("#tipoA").val();
+	var f = $("#enderecoA").val();
+	var g = $("#valorA").val();
+	var h = $("#mensagemA").val();
+
+	if(a == ""){
+		alert("Digite seu nome!");
+		$("#nomeA").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+	if(b == ""){
+		alert("Digite seu e-mail!");
+		$("#emailA").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+		parte1 = $("#emailA").val().indexOf('@');
+		parte2 = $("#emailA").val().indexOf(".");
+		parte3 = $("#emailA").val().length;
+		if (!(parte1 >= 3 && parte2 >= 6 && parte3 >= 9)) {
+			alert ("Digite um e-mail válido!");
+			$("#emailA").focus();
+			$.mobile.loading('hide');
+			return false;
+		}	
+	if(c == ""){
+		alert("Digite seu Telefone!");
+		$("#telA").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+		var tel = c.valueOf().replace(/[_\W]+/g, "");
+		var len = tel.substring(6,10);//verifica se são números os últimos 4
+		if (len == 0 || isNaN(tel) || tel.length != 10){ 
+			alert(tel+"Digite um número de telefone válido!");
+			$("#telA").focus();
+			$.mobile.loading('hide');
+			return false;
+		}	
+	if(h == ""){
+		alert("Digite sua mensagem!");
+		$("#mensagemA").focus();
+		$.mobile.loading('hide');
+		return false;
+	}
+	
+	history.back();
+
+ 	$.ajax({
+		  url:URL+"/app/PHP/sendAnuncio.php",
+		  data: {'a':a, 'b':b, 'c':c, 'd':d, 'e':e, 'f':f, 'g':g, 'h':h},
+		  type:"POST", 
+		  success: function(result){			  
+			  alert(result); 	  			 
+			  $.mobile.loading('hide');
+		  }, 
+		  error: function (xhr, status, error) {
+				alert('ERRO:'+error); 
+    	  }
+	  });
+	  return false;
+	  event.preventDefault();	
+}
