@@ -1,11 +1,12 @@
-$.ajaxSetup({
+/*$.ajaxSetup({
     timeout: 1, // Microseconds, for the laughs.  Guaranteed timeout.
     error: function(request, status, maybe_an_exception_object) {
-        if(status == 'timeout')
-            alert("ERRO: Sem conex\u00e3o com a Internet!");
-			navigator.app.exitApp();			
+        if(status != 'timeout')
+            alert("On-line");
+        else
+            alert("ERRO: Sem conex\u00e3o com a Internet!");	
     }
-});
+});*/
 
 function buscaCi() {
 var Ci = document.getElementById("busca_ci").value;
