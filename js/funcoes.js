@@ -50,7 +50,7 @@ function loadResult(a,b,c,d,e,f,g){
 					data: {'bT':a, 'bM':b, 'bL':c, 'bB':d, 'bV':e, 'bC':f,'itemsPerGroup':g, 'groupNo': track_load}, 
 					type:"POST",
 					success: function(data){
-						$("#showResult").append(data).trigger("create");    
+						$("#showResult").append(data).trigger("create");  
 						$.mobile.loading('hide');                    
 						track_load++;  								  
 						loading = false; 
