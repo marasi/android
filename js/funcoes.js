@@ -1,12 +1,13 @@
 /*check internet connection*/
-$(document).ready(function(e) {
-	var networkState = navigator.connection.type;
-	if (networkState == Connection.NONE){
-		alert('No Internet');
-	}else{
-		alert('Internet Connection there');
-	}
-});
+function onOnline() {               
+	alert("Internet connected");
+}
+document.addEventListener("offline", onOffline, false);
+function onOffline() {
+    alert("Internet not connected");
+
+}
+    document.addEventListener("online", onOnline, false);
 
 function buscaCi() {
 var Ci = document.getElementById("busca_ci").value;
