@@ -1,13 +1,30 @@
-/*check internet connection*/
-function onOnline() {               
-	alert("Internet connected");
+/*check internet connection *****************************************************************/
+document.addEventListener("deviceready", init, false);
+ 
+function init() {
+  document.addEventListener("online", toggleCon, false);
+	document.addEventListener("offline", toggleCon, false);
+ 
+	if(navigator.network.connection.type == Connection.NONE) {
+		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+	} else {
+		setupButtonHandler();
+	}
+ 
 }
-document.addEventListener("offline", onOffline, false);
-function onOffline() {
-    alert("Internet not connected");
-
+ 
+function toggleCon(e) {
+	console.log("Called",e.type);
+	if(e.type == "offline") {
+		$("#searchBtn").off("touchstart").attr("disabled","disabled");
+		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+	} else {
+		$("#searchBtn").removeAttr("disabled");
+		navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+		setupButtonHandler();
+	}
 }
-    document.addEventListener("online", onOnline, false);
+/*********************************************************************************************/
 
 function buscaCi() {
 var Ci = document.getElementById("busca_ci").value;
