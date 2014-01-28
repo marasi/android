@@ -1,9 +1,10 @@
 /*check internet connection*/
 $(document).ready(function(e) {
-	if (navigator.onLine) {
-	  alert('online');
-	} else {
-	  alert('offline');
+	var networkState = navigator.connection.type;
+	if (networkState == Connection.NONE){
+		alert('No Internet');
+	}else{
+		alert('Internet Connection there');
 	}
 });
 
