@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="iso-8859-1">
+<title>Aplicativo Mobile</title>
+
+<script src="cordova.js"></script>
+
+</head>
+<body>
+<h2>Checando conexão com a Internet:</h2>
+
+<script>
+/*check internet connection *****************************************************************/
+// Wait for device API libraries to load
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+function onDeviceReady() {
+	checkConnection();
+}
+
+	function checkConnection() {
+
+		var networkState = navigator.connection.type;
+
+		var states = {};
+		states[Connection.UNKNOWN]  = 'Unknown connection';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI]     = 'WiFi connection';
+		states[Connection.CELL_2G]  = 'Cell 2G connection';
+		states[Connection.CELL_3G]  = 'Cell 3G connection';
+		states[Connection.CELL_4G]  = 'Cell 4G connection';
+		states[Connection.CELL]     = 'Cell generic connection';
+		states[Connection.NONE]     = 'No network connection';
+
+
+var isOnline = setInterval(function () {
+	if(navigator.connection.type != Connection.NONE){
+		alert(states[networkState]);
+	}else{
+		alert(states[networkState]);
+	}
+}, 100);
+
+
+
+
+            //alert('Tipo de Conexao: ' + states[networkState]);
+}
+</script>
+</body>
+</html>

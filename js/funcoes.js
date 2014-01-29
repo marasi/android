@@ -1,34 +1,33 @@
 /*check internet connection *****************************************************************/
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+// Wait for device API libraries to load
+document.addEventListener("deviceready", onDeviceReady, false);
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        checkConnection();
-    }
+// device APIs are available
+function onDeviceReady() {
+	checkConn();
+}
 
-        function checkConnection() {
-			alert("Checando...");
-            var networkState = navigator.connection.type;
+function checkConn() {
+	var networkState = navigator.connection.type;
+	var states = {};
+	states[Connection.NONE] = 'Sem conexão com a Internet';
 
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.CELL]     = 'Cell generic connection';
-            states[Connection.NONE]     = 'No network connection';
-
-            alert('Tipo de Conexao: ' + states[networkState]);
-        }
-		
-		
-
-/*********************************************************************************************/
+	if($.mobile.activePage.attr("id") != "conn"){
+		var isOnline = setInterval(function () {
+			if(navigator.connection.type == Connection.NONE){
+				<!--alert(states[networkState]);-->
+				$.mobile.changePage($('#conn'), 'pop');
+				$("#connResult").html(states[networkState]);
+			}
+		}, 100);
+	}else{
+		if(navigator.connection.type != Connection.NONE){
+			<!--alert(states[networkState]);-->
+			history.back();
+		}		
+	}
+}
+/******************************************************************/
 
 function buscaCi() {
 var Ci = document.getElementById("busca_ci").value;
