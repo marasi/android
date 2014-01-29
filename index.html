@@ -32,15 +32,39 @@ app.initialize();
   </div>
   <div data-role="content">
   
-<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
-<button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">message and subject</button>
-<button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button>
-<button onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')">message and link</button>
-<button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button>
-<button onclick="window.plugins.socialsharing.share(null, null, 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null)">base64 image only</button>
-<button onclick="window.plugins.socialsharing.share('Message and image', null, 'https://www.google.nl/images/srpr/logo4w.png', null)">message and image</button>
-<button onclick="window.plugins.socialsharing.share('Message, image and link', null, 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')">message, image and link</button>
-<button onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')">message, subject, image and link</button>
+<div class="app">
+  <h1>Plugins Demo</h1>
+  <div id="deviceready" class="blink">
+    <p class="event listening">Connecting to Device</p>
+    <p class="event received">Device is Ready</p>
+    <div id="pluginsDemoDiv">
+      <p>
+        <button onclick="socialsharingDemo()">SocialSharing</button>
+      </p>
+      <p>
+        <button onclick="changeWebViewColor()">Make webview background green (iOS)</button>
+        <input name="test" type="text" width="10" placeholder="test"/>
+      </p>
+      <p>
+        <button onclick="calendarDemoAdd()">Calendar-add</button>
+        <button onclick="calendarDemoRemove()">Calendar-del (iOS)</button>
+      </p>
+      <p>
+        <button onclick="window.plugins.toast.showShortBottom('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">Show a toast at the bottom</button>
+      </p>
+      <p>
+        <button onclick="sslcertificatecheckerDemo(true)">SSL check-ok</button>
+        <button onclick="sslcertificatecheckerDemo(false)">SSL check-fail</button>
+      </p>
+      <p>
+        <button onclick="videoCapturePlusDemo(true,true,5)">VideCapturePlus HQ front 5s</button>
+      </p>
+      <div id="video_meta_container"></div>
+      <div id="video_meta_container2"></div>
+      <div id="video_container"></div>
+    </div>
+  </div>
+</div>
 
     <ul data-role="listview" data-inset="true" data-split-theme="b" data-split-icon="plus">
       <li data-icon="shop"><a href="#" onClick="pesquisar('venda')"><h2>Vendas</h2></a></li>
