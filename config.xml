@@ -33,7 +33,6 @@
 <!-- X-Services PhoneGap Build plugins -->
 <gap:plugin name="nl.x-services.plugins.socialsharing" />
 <param name="URL_SCHEME" value="xpluginsdemo" />
-</gap:plugin>
 
 <!-- PhoneGap plugins -->
 <gap:plugin name="org.apache.cordova.network-information"/>
