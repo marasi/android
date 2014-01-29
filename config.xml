@@ -17,9 +17,6 @@
 	Maurício Ramos da Silva 
 </author>
 
-<feature name="http://api.phonegap.com/1.0/device" />
-<feature name="http://api.phonegap.com/1.0/media" />
-
 <gap:platform name="ios" />
 <gap:platform name="android" />
 <gap:platform name="winphone" />
@@ -31,18 +28,10 @@
 <gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 <!-- X-Services PhoneGap Build plugins -->
-    <gap:plugin name="nl.x-services.plugins.socialsharing" />
-    <gap:plugin name="nl.x-services.plugins.calendar" />
-    <gap:plugin name="nl.x-services.plugins.ipadlandscapeenabler" />
-    <gap:plugin name="nl.x-services.plugins.ioswebviewcolor" />
-    <gap:plugin name="nl.x-services.plugins.videocaptureplus" />
-    <gap:plugin name="nl.x-services.plugins.toast" />
-    <gap:plugin name="nl.x-services.plugins.sslcertificatechecker" />
-    <gap:plugin name="nl.x-services.plugins.launchmyapp"/>
+<gap:plugin name="nl.x-services.plugins.socialsharing" />
 
 <!-- PhoneGap plugins -->
 <gap:plugin name="org.apache.cordova.network-information"/>
-<gap:plugin name="org.apache.cordova.dialogs" version="0.2.2" />
 
 <preference name="show-splash-screen-spinner" value="true" />
 
