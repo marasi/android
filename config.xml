@@ -31,8 +31,14 @@
 <gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 <!-- X-Services PhoneGap Build plugins -->
-<gap:plugin name="nl.x-services.plugins.socialsharing" />
-<param name="URL_SCHEME" value="xpluginsdemo" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <gap:plugin name="nl.x-services.plugins.calendar" />
+    <gap:plugin name="nl.x-services.plugins.ipadlandscapeenabler" />
+    <gap:plugin name="nl.x-services.plugins.ioswebviewcolor" />
+    <gap:plugin name="nl.x-services.plugins.videocaptureplus" />
+    <gap:plugin name="nl.x-services.plugins.toast" />
+    <gap:plugin name="nl.x-services.plugins.sslcertificatechecker" />
+    <gap:plugin name="nl.x-services.plugins.launchmyapp">
 
 <!-- PhoneGap plugins -->
 <gap:plugin name="org.apache.cordova.network-information"/>
