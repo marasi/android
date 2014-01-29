@@ -13,7 +13,9 @@ function checkConn() {
 			if(navigator.connection.type == Connection.NONE){
 				<!--alert(states[networkState]);-->
 				$.mobile.changePage($('#conn'), 'pop');
-				$("#connResult").html('Sem conexão com a Internet');
+				$("#connResult").html(
+				'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
+				);
 			}
 		}, 1000);
 	}else{

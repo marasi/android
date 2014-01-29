@@ -156,3 +156,7 @@ font{
 	float:left;
 	margin:10px;
 }
+#offlineIcon{
+	vertical-align:middle;
+	padding-right:20px;		
+}
