@@ -29,12 +29,13 @@
 
 /*plugins*/
 <gap:plugin name="org.apache.cordova.network-information"/>
+<gap:plugin name="nl.x-services.plugins.socialsharing" />
 
 <!--<feature name="http://api.phonegap.com/1.0/network"/>-->
 
-<feature name="NetworkStatus">
+<!--<feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-</feature>
+</feature>-->
 
 <access origin="*"/>
 </widget>
