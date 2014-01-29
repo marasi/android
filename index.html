@@ -36,11 +36,9 @@ function onDeviceReady() {
 
 
 var isOnline = setInterval(function () {
-	if(isOnline == navigator.onLine){
-		isOnline = online;
+	if(navigator.connection.type != Connection.NONE){
 		alert(states[networkState]);
 	}else{
-		isOnline = offline;
 		alert(states[networkState]);
 	}
 }, 100);
