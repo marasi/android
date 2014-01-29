@@ -17,6 +17,9 @@
 	Maurício Ramos da Silva 
 </author>
 
+<feature name="http://api.phonegap.com/1.0/device" />
+<feature name="http://api.phonegap.com/1.0/media" />
+
 <gap:platform name="ios" />
 <gap:platform name="android" />
 <gap:platform name="winphone" />
@@ -27,15 +30,16 @@
 <gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 <gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
-/*plugins*/
-<gap:plugin name="org.apache.cordova.network-information"/>
+<!-- X-Services PhoneGap Build plugins -->
 <gap:plugin name="nl.x-services.plugins.socialsharing" />
+<param name="URL_SCHEME" value="xpluginsdemo" />
+</gap:plugin>
 
-<!--<feature name="http://api.phonegap.com/1.0/network"/>-->
+<!-- PhoneGap plugins -->
+<gap:plugin name="org.apache.cordova.network-information"/>
+<gap:plugin name="org.apache.cordova.dialogs" version="0.2.2" />
 
-<!--<feature name="NetworkStatus">
-    <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
-</feature>-->
+<preference name="show-splash-screen-spinner" value="true" />
 
 <access origin="*"/>
 </widget>
