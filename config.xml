@@ -38,7 +38,7 @@
     <gap:plugin name="nl.x-services.plugins.videocaptureplus" />
     <gap:plugin name="nl.x-services.plugins.toast" />
     <gap:plugin name="nl.x-services.plugins.sslcertificatechecker" />
-    <gap:plugin name="nl.x-services.plugins.launchmyapp">
+    <gap:plugin name="nl.x-services.plugins.launchmyapp"/>
 
 <!-- PhoneGap plugins -->
 <gap:plugin name="org.apache.cordova.network-information"/>
