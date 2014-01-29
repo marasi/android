@@ -8,18 +8,14 @@ function onDeviceReady() {
 }
 
 function checkConn() {
-	var networkState = navigator.connection.type;
-	var states = {};
-	states[Connection.NONE] = 'Sem conexão com a Internet';
-
 	if($.mobile.activePage.attr("id") != "conn"){
 		var isOnline = setInterval(function () {
 			if(navigator.connection.type == Connection.NONE){
 				<!--alert(states[networkState]);-->
 				$.mobile.changePage($('#conn'), 'pop');
-				$("#connResult").html(states[networkState]);
+				$("#connResult").html('Sem conexão com a Internet');
 			}
-		}, 100);
+		}, 1000);
 	}else{
 		if(navigator.connection.type != Connection.NONE){
 			<!--alert(states[networkState]);-->
