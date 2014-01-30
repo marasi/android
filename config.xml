@@ -30,6 +30,7 @@
 
 <!-- PhoneGap plugins -->
 <gap:plugin name="org.apache.cordova.network-information"/>
+<gap:plugin name="nl.x-services.plugins.socialsharing" />
 
 <access origin="*"/>
 </widget>
