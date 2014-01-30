@@ -162,9 +162,9 @@ font{
 }
 /* info button override */
 .shareM{
-	position:relative;
+	position:absolute;
 	float:right;
-	top:-34px;
+	top:8px;
 	right:10px;
 	width:32px; height:32px;
     background: url(../images/share.png) no-repeat;
