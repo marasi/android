@@ -168,4 +168,6 @@ font{
 	right:10px;
 	width:32px; height:32px;
     background: url(../images/share.png) no-repeat;
-} 
+	cursor:pointer;
+}
+
