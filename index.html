@@ -3,13 +3,150 @@
 <head>
 <meta charset="iso-8859-1">
 <title>Aplicativo Mobile</title>
+<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.theme-1.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.structure-1.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.icons-1.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.inline-png-1.4.0.min.css">
+<link rel="stylesheet" type="text/css" href="css/flexslider.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
 
+<script src="js/config.js"></script>
+<!--<script src="cordova.js"></script>-->
 <script src="phonegap.js"></script>
-
+<script src="jquery-mobile/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.4.0.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/funcoes.js" type="text/javascript"></script>
 </head>
 <body>
-<h2>Sharing Teste:</h2>
 
-<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+<div data-role="page" id="menu" data-theme="b">
+  <div data-role="header">
+    <h1>Mobile App - Alpha</h1><div onclick="shareS()" class="shareM"></div>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true" data-split-theme="b" data-split-icon="plus">
+      <li data-icon="shop"><a href="#" onClick="pesquisar('venda')"><h2>Vendas</h2></a></li>
+      <li data-icon="tag"><a href="#" onClick="pesquisar('aluguel')"><h2>Alugu&eacute;is</h2></a></li>
+      <li data-icon="search"><a href="#busca"><h2>Busca</h2></a></li>
+      <li data-icon="star"><a href="#empresa"><h2>Empresa</h2></a></li>
+      <li data-icon="info"><a href="#anuncie"><h2>Anuncie</h2></a></li>
+      <li data-icon="location"><a href="#maps"><h2>Google Maps</h2></a></li>
+      <li data-icon="phone"><a href="#contato"><h2>Contato</h2></a></li>
+    </ul>
+  </div>
+  <div data-role="footer">
+    <h4>Imobili&aacute;ria © 2014</h4>
+  </div>
+</div>
+<div data-role="page" id="vendas" data-theme="b">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Vendas</h1>
+  </div>
+  <div data-role="content">
+    <div id="vendasResult"></div>
+  </div>
+</div>
+<div data-role="page" id="alugueis" data-theme="b">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Alugu&eacute;is</h1>
+  </div>
+  <div data-role="content"> Conte&uacute;do</div>
+</div>
+<div data-role="page" id="busca" data-theme="b" >
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Busca</h1>
+  </div>
+  <div data-role="content">
+    <div id="buscaResult"></div>
+  </div>
+</div>
+<div data-role="page" id="empresa" data-theme="b">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Empresa </h1>
+  </div>
+  <div data-role="content">
+    <div id="empresaResult"></div>
+  </div>
+</div>
+<div data-role="page" id="anuncie" data-theme="b">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Anuncie</h1>
+  </div>
+  <div data-role="content">
+	<div id="anuncieResult"></div>  
+  </div>
+</div>
+<div data-role="page" id="maps" data-theme="b" data-fullscreen="true">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Google Maps</h1>
+  </div>
+  <div data-role="content">
+    <div id="mapsResult"></div>
+
+  </div>
+  <div data-role="footer"> </div>
+</div>
+<div data-role="page" id="contato" data-theme="b">
+  <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Contato</h1>
+  </div>
+  <div data-role="content">
+  <div id="contatoResult"></div>  
+  </div>
+  <table id="contatoBottom" data-role="footer" data-theme="b">
+  <tr>
+    <td align="center"><a href="#pFone"><div id="fone"></div>Telefone</a></td>
+    <td align="center"><a href="#pMail" onClick="pContato()"><div id="mail"></div>E-mail</a></td>
+  </tr>
+</table>
+</div>
+
+<div data-role="page" id="ver" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1 id="verHead">Visualizar Im&oacute;vel</h1><div onclick="shareV()" class="shareM"></div>
+  </div>
+  <div data-role="content">
+	<div id="verResult"></div>  
+  </div>
+</div>
+
+<div data-role="page" id="result" data-theme="b" >
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Resultado da Busca</h1>
+  </div>  
+  <div  data-role="content">
+  <div id="showResult"></div>
+  </div>    
+</div>
+<div data-role="page" id="pFone" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Ligar</h1>
+  </div>
+  <div data-role="content">
+	<div id="foneResult"></div>  
+  </div>
+</div>
+<div data-role="page" id="pMail" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>E-mail</h1>
+  </div>
+  <div data-role="content">
+	<div id="mailResult"></div>  
+  </div>
+</div>
+<div data-role="page" id="conn" data-theme="b">
+  <div data-role="header">
+    <h1>Conex&atilde;o</h1>
+  </div>
+  <div data-role="content">
+	<div id="connResult" class="ui-body ui-body-b ui-corner-all"></div>
+    <input type="button" value="Atualizar" onClick="checkConn()"/>  
+  </div>
+</div>
+
+<span id="debug"></span>
 </body>
 </html>

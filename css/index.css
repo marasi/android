@@ -160,3 +160,12 @@ font{
 	vertical-align:middle;
 	padding-right:20px;		
 }
+/* info button override */
+.shareM{
+	position:relative;
+	float:right;
+	top:-34px;
+	right:10px;
+	width:32px; height:32px;
+    background: url(../images/share.png) no-repeat;
+} 
