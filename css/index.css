@@ -161,7 +161,7 @@ font{
 	padding-right:20px;		
 }
 /* info button override */
-.shareM{
+.shareHeader{
 	position:absolute;
 	float:right;
 	top:8px;
