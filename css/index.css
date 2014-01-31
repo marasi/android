@@ -172,17 +172,7 @@ font{
         (document.documentElement.clientHeight-this.offsetHeight)));
     height:100px;	
 }
-#contatoBottom a{
-	font-size:12px;
-	color:#FFF;
-	text-decoration:none;
-}
-#contatoBottom a:hover{
-    height: 100%;
-    width: 100%;
-	background:#09C;
-	opacity:0.5;
-}
+
 #houseIcon{
 	float:left;
 	margin:10px;
