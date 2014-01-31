@@ -1,15 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="iso-8859-1">
-<title>Aplicativo Mobile</title>
+<style>
+table{
 
-<script src="phonegap.js"></script>
+	background:blue;
+}
+</style>
 
-</head>
-<body>
-<h2>Sharing Teste:</h2>
+<script>
+function executa(e){
+	e.style.fontSize = "20px";
+	e.style.background = "red";
+}
+</script>
 
-<button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
-</body>
-</html>
+
+<table onClick="executa(this)" width="200" height="100" border="0">
+  <tr>
+    <td>
+imagem aqui
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+    Aqui
+    </td>
+  </tr>
+</table>
+
+

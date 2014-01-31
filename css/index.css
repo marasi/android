@@ -32,7 +32,7 @@ font{
 	font-size:9px;	
 }
 .resultRow{
-	width:auto;
+	width:100%;
     padding:0 5px 0 5px;
     position:relative;
 }
@@ -89,6 +89,7 @@ font{
 	height:60px;
 	background-image:url(../images/phone.png);
 	background-repeat:no-repeat;
+	font-size:12px;
 	text-decoration:none;
 	margin:0 auto;
 }
@@ -99,9 +100,33 @@ font{
 	height:60px;
 	background-image:url(../images/mail.png);
 	background-repeat:no-repeat;
+	font-size:12px;
 	text-decoration:none;
 	margin:0 auto;	
 }
+#fone a{
+    display: block;
+	border-radius:9px;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+#fone a:active{
+	background:#09C;
+	opacity:0.5;
+}
+#mail a{
+	border-radius:9px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+#mail a:active{
+	background:#09C;
+	opacity:0.5;
+}
+
 .op img{
 	vertical-align:middle;
 	padding-right:20px;	
@@ -152,6 +177,12 @@ font{
 	color:#FFF;
 	text-decoration:none;
 }
+#contatoBottom a:hover{
+    height: 100%;
+    width: 100%;
+	background:#09C;
+	opacity:0.5;
+}
 #houseIcon{
 	float:left;
 	margin:10px;
@@ -160,14 +191,24 @@ font{
 	vertical-align:middle;
 	padding-right:20px;		
 }
-/* info button override */
+/* share icon header */
 .shareHeader{
 	position:absolute;
 	float:right;
-	top:8px;
+	top:0px;
 	right:10px;
-	width:32px; height:32px;
+	width:42px; height:42px;
     background: url(../images/share.png) no-repeat;
+	background-position:center;
 	cursor:pointer;
 }
-
+a.fillUp {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+.shareHeader .fillUp:active{
+	background:#09C;
+	opacity:0.5;
+}

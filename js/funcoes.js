@@ -136,7 +136,10 @@ function startSlide() {
   });
 }
 
-function ver(id,ci){
+function ver(id,ci,el){
+	el.style.background = '#09C';
+	el.style.opacity = '0.5';
+	$.mobile.changePage($('#ver'), 'pop');	
 	$.mobile.loading('show');
 	$("#verHead").html("Código: " + ci);
     $.ajax({
@@ -147,9 +150,11 @@ function ver(id,ci){
         $("#verResult").html(result);
 		$(document).ready(function(e) {
             startSlide();
+			//setTimeout( "startSlide()",3000 );
         });
-		/*startSlide();*/	
 		$.mobile.loading('hide');
+		el.style.background = 'none';
+		el.style.opacity = '1';
         $(document).listview().trigger("create");
         }
     });
