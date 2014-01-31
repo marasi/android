@@ -131,7 +131,9 @@ function pesquisar(m){
 
 function startSlide() {
   $('.flexslider').flexslider({
-    animation: "slide",            
+    animation: "slide",
+	slideshow: true,
+    touch: true,            
 	directionNav: false
   });
 }
@@ -148,7 +150,7 @@ function ver(id,ci,el){
         type:"GET",
         success:function(result){			
         $("#verResult").html(result);
-		$(document).ready(function(e) {
+		$(document).bind('pageshow', function(){
             startSlide();
 			//setTimeout( "startSlide()",3000 );
         });

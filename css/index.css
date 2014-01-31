@@ -71,8 +71,7 @@ font{
 	margin:5px 0 5px 0;
 }
 /*páginas*/
-#empresaResult{
-    padding:20px;
+#empresaResult, .descricao{
     text-align:justify;
 }
 
