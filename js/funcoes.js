@@ -69,7 +69,7 @@ function loadResult(a,b,c,d,e,f,g){
 		'no scroll = bT:'+a+'bM:'+b+'bL:'+c+'bB:'+d+'bV:'+e+'bC:'+f+'groupNo:'+ track_load
 		);	*/	
 
-		if($(window).scrollTop() + $(window).height() >= $(document).height()){ 
+		if(($(window).scrollTop() + $(window).height() >= $(document).height()) && $("#result").is(".ui-page-active")){ 
 			//$('#debug').html('autoScroll...');
 			if(track_load <= total_groups && loading==false){      
 				loading = true;                    
