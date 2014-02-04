@@ -436,3 +436,27 @@ function enviarA(){
 	  return false;
 	  event.preventDefault();	
 }
+
+function closePop(){
+	var page = $.mobile.activePage.attr("id");
+	$("#"+page+"Pop").popup("close");	
+}
+
+function popup(){
+	var page = $.mobile.activePage.attr("id");
+	//alert("#"+page+"AO");
+	$(document).ready(function(e) {
+	  if($("#"+page+"Pop").length == 0){
+		$("#"+page).append("<div data-role='popup' id='"+page+"Pop' style='top:14px;right:0px;'><ul data-role='listview'><li data-icon='false'><a href='#info'>Informações</a></li><li data-icon='false'><a href='#' onclick='closePop()'>Sair</a></li></ul></div>").trigger("create");
+		$("#"+page+"Pop").popup("open", {positionTo: "#"+page+"AO"});
+		$(window).on("resize", function(){
+		   $("#"+page+"Pop").popup("close"); 
+		});
+	  }else{
+		$("#"+page+"Pop").popup("open", {positionTo: "#"+page+"AO"}); 
+		$(window).on("resize", function(){
+		   $("#"+page+"Pop").popup("close"); 
+		});
+	  }
+	});
+}

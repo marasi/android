@@ -23,9 +23,13 @@
 </head>
 <body>
 
+
+
 <div data-role="page" id="menu" data-theme="b">
   <div data-role="header">
-    <h1>Mobile App - Alpha</h1><div class="shareHeader"><a onclick="shareS()" class="fillUp"></a></div>
+    <h1>Mobile App - Alpha</h1>
+    <div class="actionShare"><a onclick="shareS()" class="fillUp"></a></div>
+    <div class="actionOverflow" id="menuAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
     <ul data-role="listview" data-inset="true" data-split-theme="b" data-split-icon="plus">
@@ -41,11 +45,13 @@
   <div data-role="footer">
     <h4>Imobili&aacute;ria © 2014</h4>
   </div>
+  
 </div>
 
 <div data-role="page" id="busca" data-theme="b" >
   <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Busca</h1>
+    <div class="actionOverflow" id="buscaAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
     <div id="buscaResult"></div>
@@ -54,6 +60,7 @@
 <div data-role="page" id="empresa" data-theme="b">
   <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Empresa </h1>
+    <div class="actionOverflow" id="empresaAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
     <div id="empresaResult"></div>
@@ -62,6 +69,7 @@
 <div data-role="page" id="anuncie" data-theme="b">
   <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Anuncie</h1>
+    <div class="actionOverflow" id="anuncieAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
 	<div id="anuncieResult"></div>  
@@ -70,16 +78,17 @@
 <div data-role="page" id="mapa" data-theme="b" data-fullscreen="true">
   <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Google Maps</h1>
+    <div class="actionOverflow" id="mapaAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
     <div id="mapaResult"></div>
-
   </div>
   <div data-role="footer"> </div>
 </div>
 <div data-role="page" id="contato" data-theme="b">
   <div data-role="header"> <a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Contato</h1>
+    <div class="actionOverflow" id="contatoAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
   <div id="contatoResult"></div>  
@@ -94,7 +103,9 @@
 
 <div data-role="page" id="ver" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
-    <h1 id="verHead">Visualizar Im&oacute;vel</h1><div class="shareHeader"><a onclick="shareI()" class="fillUp"></a></div>
+    <h1 id="verHead">Visualizar Im&oacute;vel</h1>
+    <div class="actionShare"><a onclick="shareI()" class="fillUp"></a></div>
+    <div class="actionOverflow" id="verAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
 	<div id="verResult"></div>  
@@ -104,6 +115,7 @@
 <div data-role="page" id="result" data-theme="b" >
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Resultado da Busca</h1>
+    <div class="actionOverflow" id="resultAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>  
   <div  data-role="content">
   <div id="showResult"></div>
@@ -112,6 +124,7 @@
 <div data-role="page" id="pFone" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>Ligar</h1>
+    <div class="actionOverflow" id="pFoneAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
 	<div id="foneResult"></div>  
@@ -120,6 +133,7 @@
 <div data-role="page" id="pMail" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
     <h1>E-mail</h1>
+    <div class="actionOverflow" id="pMailAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
 	<div id="mailResult"></div>  
@@ -127,14 +141,30 @@
 </div>
 <div data-role="page" id="conn" data-theme="b">
   <div data-role="header">
-    <h1>Conex&atilde;o</h1>
+    <h1>Mobile App</h1>
+    <div class="actionOverflow" id="connAO"><a onClick="popup()" class="fillUp"></a></div>
   </div>
   <div data-role="content">
 	<div id="connResult" class="ui-body ui-body-b ui-corner-all"></div>
     <input type="button" value="Atualizar" onClick="checkConn()"/>  
   </div>
 </div>
+<div data-role="page" id="info" data-theme="b">
+  <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
+    <h1>Informações</h1>
+  </div>
+  <div data-role="content">
+  <script>
+   $($('#info').children()[1]).html("<h2>"+TITULO+"</h2><br/>");
+  </script>
+  Todos os logotipos utilizados são marcas registradas de seus respectivos donos (Vivo, Claro, Tim, Oi).<br/><br/> 
+  Maurício Webdesign<br/>
+  <a href="http://www.mauricioramos.com.br">www.mauricioramos.com.br</a>
+  </div>
+
+</div>
 
 <span id="debug"></span>
+
 </body>
 </html>
