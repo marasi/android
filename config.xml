@@ -2,53 +2,68 @@
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "br.com.mauricioramos.mobileapp"
-        version = "1.0.0">
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+		id = "br.com.mauricioramos.mobileapp"
+		version = "1.0.0">
 
-<name>Mobile App</name>
+	<name>Mobile App</name>
+	
+	<description>
+		Aplicativo que faz acesso ao Sistema Imobiliário Mobile v2.0.
+		Em desenvolvimento e testes.
+	</description>
+	
+	<author href="http://www.mauricioramos.com.br" email="contato@mauricioramos.com.br">
+		Maurício Ramos da Silva 
+	</author>
+	
+	<preference name="phonegap-version" value="3.1.0" />
+	
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+	<gap:platform name="winphone" />
+		
+	
+	<!-- 3rd part plugins -->
+	<gap:plugin name="nl.x-services.plugins.socialsharing" />
+	<!-- PhoneGap plugins -->
+	<gap:plugin name="org.apache.cordova.network-information"/>
+	<gap:plugin name="org.apache.cordova.core.splashscreen" />
+	
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="false" />
+	<preference name="webviewbounce" value="true" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="stay-in-webview" value="false" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="detect-data-types" value="true" />
+	<preference name="exit-on-suspend" value="false" />
+	<preference name="show-splash-screen-spinner" value="true" />
+	<preference name="auto-hide-splash-screen" value="true" />
+	<preference name="disable-cursor" value="false" />
+	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-installLocation" value="auto" />
+	<preference name="SplashScreenDelay" value="3000" />
 
-<description>
-	Aplicativo que faz acesso ao Sistema Imobiliário Mobile v2.0.
-	Em desenvolvimento e testes.
-</description>
-
-<author href="http://www.mauricioramos.com.br" email="contato@mauricioramos.com.br">
-	Maurício Ramos da Silva 
-</author>
-
-<gap:platform name="ios" />
-<gap:platform name="android" />
-<gap:platform name="winphone" />
 
 
-<!-- 3rd part plugins -->
-<gap:plugin name="nl.x-services.plugins.socialsharing" />
-<!-- PhoneGap plugins -->
-<gap:plugin name="org.apache.cordova.network-information"/>
+    <!-- Define app splash screen for each platform. -->
+    <gap:splash src="res/screen/android/splash.9.png" gap:platform="android" />
 
+    <gap:splash src="res/screen/blackberry/screen-225.png"
+        gap:platform="blackberry" />
 
-<preference name="target-device" value="universal" />
-<preference name="fullscreen" value="false" />
-<preference name="webviewbounce" value="true" />
-<preference name="prerendered-icon" value="true" />
-<preference name="stay-in-webview" value="false" />
-<preference name="ios-statusbarstyle" value="black-opaque" />
-<preference name="detect-data-types" value="true" />
-<preference name="exit-on-suspend" value="false" />
-<preference name="show-splash-screen-spinner" value="true" />
-<preference name="auto-hide-splash-screen" value="true" />
-<preference name="disable-cursor" value="false" />
-<preference name="android-minSdkVersion" value="8" />
-<preference name="android-installLocation" value="auto" />
-<preference name="SplashScreenDelay" value="3000" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"
+        gap:platform="ios" width="320" height="480" />
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png"
+        gap:platform="ios" width="640" height="960" />
+    <gap:splash src="res/screen/ios/screen-ipad-portrait.png"
+        gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="res/screen/ios/screen-ipad-landscape.png"
+        gap:platform="ios" width="1024" height="768" />
 
+    <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"
+        gap:platform="winphone" />
 
-<!--for android-->
-<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
-<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
-<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
-<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-
-<access origin="*"/>
+	<access origin="*"/>
 </widget>

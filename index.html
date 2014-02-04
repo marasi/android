@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="iso-8859-1">
-<title>Aplicativo Mobile</title>
-<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.4.0.min.css">
-<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.theme-1.4.0.min.css">
-<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.structure-1.4.0.min.css">
-<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.icons-1.4.0.min.css">
-<link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.inline-png-1.4.0.min.css">
-<link rel="stylesheet" type="text/css" href="css/flexslider.css">
-<link rel="stylesheet" type="text/css" href="css/index.css">
-
-<script src="js/config.js"></script>
-<!--<script src="cordova.js"></script>-->
-<script src="phonegap.js"></script>
-<script src="jquery-mobile/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="jquery-mobile/jquery.mobile-1.4.0.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.maskedinput.min.js"></script>
-<script src="js/funcoes.js" type="text/javascript"></script>
-<script src="js/share.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Aplicativo Mobile</title>
+    <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.theme-1.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.structure-1.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.icons-1.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile.inline-png-1.4.0.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+    <script src="js/config.js"></script>
+    <!--<script src="cordova.js"></script>-->
+    <script src="phonegap.js"></script>
+    <script src="jquery-mobile/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jquery-mobile/jquery.mobile-1.4.0.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/funcoes.js" type="text/javascript"></script>
+    <script src="js/share.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
 </head>
 <body>
 
@@ -43,7 +49,7 @@
     </ul>
   </div>
   <div data-role="footer">
-    <h4>Imobili&aacute;ria © 2014</h4>
+    <h4>Imobili&aacute;ria Â© 2014</h4>
   </div>
   
 </div>
@@ -151,14 +157,14 @@
 </div>
 <div data-role="page" id="info" data-theme="b">
   <div data-role="header"><a href="#" onclick="history.back()" data-icon="back">Voltar</a>
-    <h1>Informações</h1>
+    <h1>InformaÃ§Ãµes</h1>
   </div>
   <div data-role="content">
   <script>
    $($('#info').children()[1]).html("<h2>"+TITULO+"</h2><br/>");
   </script>
-  Todos os logotipos utilizados são marcas registradas de seus respectivos donos (Vivo, Claro, Tim, Oi).<br/><br/> 
-  Maurício Webdesign<br/>
+  Todos os logotipos utilizados sÃ£o marcas registradas de seus respectivos donos (Vivo, Claro, Tim, Oi).<br/><br/> 
+  MaurÃ­cio Webdesign<br/>
   <a href="http://www.mauricioramos.com.br">www.mauricioramos.com.br</a>
   </div>
 
