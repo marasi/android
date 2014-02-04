@@ -16,6 +16,8 @@
 	<author href="http://www.mauricioramos.com.br" email="contato@mauricioramos.com.br">
 		Maurício Ramos da Silva 
 	</author>
+
+	<preference name="phonegap-version" value="3.1.0" />
 	
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
