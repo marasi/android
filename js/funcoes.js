@@ -6,22 +6,20 @@ function checkConn() {
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
-		if($.mobile.activePage.attr("id") != "conn"){
-			var isOnline = setInterval(function () {
-				if(e.type == "offline") {
+		//if($.mobile.activePage.attr("id") != "conn"){
+			if(e.type == "offline") {
+				var isOnline = setInterval(function () {				
 					<!--alert(states[networkState]);-->
 					$.mobile.changePage($('#conn'), 'pop');
 					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				}
-			}, 2000);
-		}else{
-			if(e.type == "online") {
+				
+				}, 2000);
+			}else{
 				<!--alert(states[networkState]);-->
-				clearInterval(isOnline);
-				isOnline = 0;
+				if(isOnline)clearInterval(isOnline);				
 				history.back();
 			}		
-		}
+		//}
 	}
 }
  
