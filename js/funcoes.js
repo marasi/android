@@ -33,11 +33,9 @@ function init() {
 			$("#connResult").html(
 			'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
 			);
-			$(document).bind('keydown', function(event) {
-			  if (event.keyCode == 27) { // 27 = 'Escape' keyCode (back button)
-				event.preventDefault();
-			  }
-			});
+
+			event.preventDefault();
+
 		} else {
 			history.back();
 		}
