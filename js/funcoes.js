@@ -17,32 +17,13 @@ function checkConn() {
 		}else{
 			if(e.type == "online") {
 				<!--alert(states[networkState]);-->
+				clearInterval(isOnline);
+				isOnline = 0;
 				history.back();
 			}		
 		}
 	}
 }
-
-/*document.addEventListener("deviceready", init, false);
- 
-function init() {
-  	document.addEventListener("online", toggleCon, false);
-	document.addEventListener("offline", toggleCon, false);
-	
-	function toggleCon(e) {
-		if(e.type == "offline") {
-			$.mobile.changePage($('#conn'), 'pop');
-			$("#connResult").html(
-			'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
-			);
-
-			event.preventDefault();
-
-		} else {
-			history.back();
-		}
-	} 
-}*/
  
 /******************************************************************/
 
