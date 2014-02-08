@@ -1,11 +1,6 @@
 /*check internet connection *****************************************************************/
 // Wait for device API libraries to load
-document.addEventListener("deviceready", onDeviceReady, false);
-
-// device APIs are available
-function onDeviceReady() {
-	checkConn();
-}
+/*document.addEventListener("deviceready", onDeviceReady(), false);
 
 function checkConn() {
 	if($.mobile.activePage.attr("id") != "conn"){
@@ -17,12 +12,38 @@ function checkConn() {
 				'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
 				);
 			}
-		}, 1000);
+		}, 3000);
 	}else{
 		if(navigator.connection.type != Connection.NONE){
 			<!--alert(states[networkState]);-->
 			history.back();
 		}		
+	}
+}*/
+
+document.addEventListener("deviceready", init, false);
+ 
+function init() {
+  	document.addEventListener("online", toggleCon, false);
+	document.addEventListener("offline", toggleCon, false);
+ 
+	if(navigator.network.connection.type == Connection.NONE) {
+		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+	} else {
+		//setupButtonHandler();
+	}
+ 
+}
+ 
+function toggleCon(e) {
+	console.log("Called",e.type);
+	if(e.type == "offline") {
+		$("#searchBtn").off("touchstart").attr("disabled","disabled");
+		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+	} else {
+		$("#searchBtn").removeAttr("disabled");
+		navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+		//setupButtonHandler();
 	}
 }
 /******************************************************************/
