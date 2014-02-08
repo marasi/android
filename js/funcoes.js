@@ -28,7 +28,7 @@ function init() {
 	document.addEventListener("offline", toggleCon, false);
  
 	if(navigator.network.connection.type == Connection.NONE) {
-		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+		alert("Sorry, you are offline.");
 	} else {
 		//setupButtonHandler();
 	}
@@ -36,13 +36,13 @@ function init() {
 }
  
 function toggleCon(e) {
-	console.log("Called",e.type);
+	//console.log("Called",e.type);
 	if(e.type == "offline") {
-		$("#searchBtn").off("touchstart").attr("disabled","disabled");
-		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+		//$("#searchBtn").off("touchstart").attr("disabled","disabled");
+		alert("Sorry, you are offline.");
 	} else {
-		$("#searchBtn").removeAttr("disabled");
-		navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+		//$("#searchBtn").removeAttr("disabled");
+		alert("Woot, you are back online.");
 		//setupButtonHandler();
 	}
 }
