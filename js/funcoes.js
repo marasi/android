@@ -26,26 +26,24 @@ document.addEventListener("deviceready", init, false);
 function init() {
   	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
- 
-	if(navigator.network.connection.type == Connection.NONE) {
-		alert("Sorry, you are offline.");
-	} else {
-		//setupButtonHandler();
-	}
- 
+	
+	function toggleCon(e) {
+		if(e.type == "offline") {
+			$.mobile.changePage($('#conn'), 'pop');
+			$("#connResult").html(
+			'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
+			);
+			$(document).bind('keydown', function(event) {
+			  if (event.keyCode == 27) { // 27 = 'Escape' keyCode (back button)
+				event.preventDefault();
+			  }
+			});
+		} else {
+			history.back();
+		}
+	} 
 }
  
-function toggleCon(e) {
-	//console.log("Called",e.type);
-	if(e.type == "offline") {
-		//$("#searchBtn").off("touchstart").attr("disabled","disabled");
-		alert("Sorry, you are offline.");
-	} else {
-		//$("#searchBtn").removeAttr("disabled");
-		alert("Woot, you are back online.");
-		//setupButtonHandler();
-	}
-}
 /******************************************************************/
 
 function buscaCi() {
