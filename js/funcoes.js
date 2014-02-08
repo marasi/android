@@ -1,27 +1,29 @@
 /*check internet connection *****************************************************************/
 // Wait for device API libraries to load
-/*document.addEventListener("deviceready", onDeviceReady(), false);
+document.addEventListener("deviceready", checkConn, false);
 
 function checkConn() {
-	if($.mobile.activePage.attr("id") != "conn"){
-		var isOnline = setInterval(function () {
-			if(navigator.connection.type == Connection.NONE){
+	document.addEventListener("online", toggleCon, false);
+	document.addEventListener("offline", toggleCon, false);
+	function toggleCon(e) {
+		if($.mobile.activePage.attr("id") != "conn"){
+			var isOnline = setInterval(function () {
+				if(e.type == "offline") {
+					<!--alert(states[networkState]);-->
+					$.mobile.changePage($('#conn'), 'pop');
+					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+				}
+			}, 2000);
+		}else{
+			if(e.type == "online") {
 				<!--alert(states[networkState]);-->
-				$.mobile.changePage($('#conn'), 'pop');
-				$("#connResult").html(
-				'<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet'
-				);
-			}
-		}, 3000);
-	}else{
-		if(navigator.connection.type != Connection.NONE){
-			<!--alert(states[networkState]);-->
-			history.back();
-		}		
+				history.back();
+			}		
+		}
 	}
-}*/
+}
 
-document.addEventListener("deviceready", init, false);
+/*document.addEventListener("deviceready", init, false);
  
 function init() {
   	document.addEventListener("online", toggleCon, false);
@@ -40,7 +42,7 @@ function init() {
 			history.back();
 		}
 	} 
-}
+}*/
  
 /******************************************************************/
 
