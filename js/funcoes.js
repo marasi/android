@@ -24,7 +24,11 @@ function checkConn() {
 			}else{
 				<!--alert(states[networkState]);-->
 				alert('Online');
-				clearInterval(isOnline);		
+				if(isOnline != ""){
+					clearInterval(isOnline);
+					isOnline = "";
+					alert('clearInterval to 0!');
+				}else{alert('fuck!');}
 				$.mobile.changePage($('#menu'), 'pop');
 				return false;
 			}		
