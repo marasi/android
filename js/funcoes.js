@@ -7,6 +7,7 @@ function checkConn() {
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
 		//if($.mobile.activePage.attr("id") != "conn"){
+			alert(e.type);
 			if(e.type == "offline") {
 				var isOnline = setInterval(function () {				
 					<!--alert(states[networkState]);-->
