@@ -16,6 +16,7 @@ function checkConn() {
 				}, 2000);
 			}else{
 				<!--alert(states[networkState]);-->
+				alert(isOnline);
 				if(isOnline)clearInterval(isOnline);				
 				history.back();
 			}		
