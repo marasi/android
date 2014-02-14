@@ -3,23 +3,23 @@
 document.addEventListener("deviceready", checkConn, false);
 
 function checkConn() {
-	alert('checkConn');
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
 		//if($.mobile.activePage.attr("id") != "conn"){
-			alert(e.type);
+			
 			if(e.type == "offline") {
+				alert('Offline');
 				var isOnline = setInterval(function () {				
 					<!--alert(states[networkState]);-->
 					$.mobile.changePage($('#conn'), 'pop');
 					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
 				
-				}, 2000);
+				}, 1);
 				return false;
 			}else{
 				<!--alert(states[networkState]);-->
-				alert(isOnline);
+				alert('Online');
 				if(isOnline)clearInterval(isOnline);				
 				history.back();
 				return true;
