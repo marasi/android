@@ -3,6 +3,7 @@
 document.addEventListener("deviceready", checkConn, false);
 
 function checkConn() {
+	alert('checkConn');
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
@@ -15,11 +16,13 @@ function checkConn() {
 					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
 				
 				}, 2000);
+				return false;
 			}else{
 				<!--alert(states[networkState]);-->
 				alert(isOnline);
 				if(isOnline)clearInterval(isOnline);				
 				history.back();
+				return true;
 			}		
 		//}
 	}
