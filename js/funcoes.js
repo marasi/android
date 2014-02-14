@@ -24,9 +24,9 @@ function checkConn() {
 			}else{
 				<!--alert(states[networkState]);-->
 				alert('Online');
-				if(isOnline)clearInterval(isOnline);				
+				clearInterval(isOnline);		
 				$.mobile.changePage($('#menu'), 'pop');
-				return true;
+				return false;
 			}		
 		//}
 	}
