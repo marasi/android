@@ -1,13 +1,17 @@
 /*check internet connection *****************************************************************/
 // Wait for device API libraries to load
 document.addEventListener("deviceready", checkConn, false);
-
+var conni = 0;
+var togglei = 0;
 function checkConn() {
+	conni++;
+	alert('CheckConn: '+conni);
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
 		//if($.mobile.activePage.attr("id") != "conn"){
-			
+			togglei++;
+			alert('toggleCon: '+togglei);
 			if(e.type == "offline") {
 				alert('Offline');
 				var isOnline = setInterval(function () {				
