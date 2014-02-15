@@ -14,15 +14,23 @@ function checkConn() {
 			alert('toggleCon: '+togglei);
 			if(e.type == "offline") {
 				alert('Offline');
-				$(document).bind("pageload", function() {				
-					alert('pageload >>');
+				var isOnline = setInterval(function () {				
+					<!--alert(states[networkState]);-->
 					$.mobile.changePage($('#conn'), 'pop');
 					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
 				
-				});
+				}, 1);
+				return false;
 			}else{
+				<!--alert(states[networkState]);-->
 				alert('Online');
+				if(isOnline != ""){
+					clearInterval(isOnline);
+					isOnline = "";
+					alert('clearInterval to 0!');
+				}else{alert('fuck!');}
 				$.mobile.changePage($('#menu'), 'pop');
+				return false;
 			}		
 		//}
 	}
