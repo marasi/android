@@ -13,7 +13,9 @@ function checkConn() {
 		}else{
 			//$.mobile.changePage($('#menu'), 'pop');
 			history.back();
-			return true;
+			document.removeEventListener("backbutton", function (e) {
+				e.preventDefault();
+			}, false );
 		}		
 	}
 } 
