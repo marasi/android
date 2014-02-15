@@ -14,7 +14,7 @@ function checkConn() {
 			alert('toggleCon: '+togglei);
 			if(e.type == "offline") {
 				alert('Offline');
-				$(document).bind("pageload", function() {				
+				$(document).bind("change", function() {				
 					alert('pageload >>');
 					$.mobile.changePage($('#conn'), 'pop');
 					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
