@@ -13,6 +13,7 @@ function checkConn() {
 		}else{
 			//$.mobile.changePage($('#menu'), 'pop');
 			history.back();
+			return true;
 		}		
 	}
 } 
