@@ -13,7 +13,8 @@ function checkConn() {
 		}else{			
 			document.addEventListener("backbutton", function(e){
 				e.preventDefault();
-				navigator.app.backHistory();
+				//navigator.app.backHistory();
+				history.back();
 			}, true );
 			history.back();
 		}		
