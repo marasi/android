@@ -13,8 +13,8 @@ function checkConn() {
 		}else{
 			//$.mobile.changePage($('#menu'), 'pop');
 			history.back();
-			document.addEventListener("backbutton", function (e) {
-				return true;
+			document.removeEventListener("backbutton", function (e) {
+				e.preventDefault();
 			}, false );
 		}		
 	}
