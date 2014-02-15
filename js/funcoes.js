@@ -11,7 +11,7 @@ function checkConn() {
 			document.addEventListener("backbutton", backButton, false );
 		}else{
 			history.back();
-			document.removeEventListener("backbutton", backButton, false );
+			document.addEventListener("backbutton", function(){history.back()}, false );
 		}		
 	}
 } 
