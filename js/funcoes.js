@@ -1,33 +1,22 @@
 /*check internet connection *****************************************************************/
-// Wait for device API libraries to load
 document.addEventListener("deviceready", checkConn, false);
-var conni = 0;
-var togglei = 0;
 function checkConn() {
-	conni++;
-	alert('CheckConn: '+conni);
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
 		//if($.mobile.activePage.attr("id") != "conn"){
-			togglei++;
-			alert('toggleCon: '+togglei);
-			if(e.type == "offline") {
-				alert('Offline');
-				$(document).bind("change", function() {				
-					alert('pageload >>');
-					$.mobile.changePage($('#conn'), 'pop');
-					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				
-				});
-			}else{
-				alert('Online');
-				$.mobile.changePage($('#menu'), 'pop');
-			}		
+		if(e.type == "offline") {
+			$.mobile.changePage($('#conn'), 'pop');
+			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+			document.addEventListener("backbutton", function (e) {
+				e.preventDefault();
+			}, false );
+		}else{
+			$.mobile.changePage($('#menu'), 'pop');
+		}		
 		//}
 	}
-}
- 
+} 
 /******************************************************************/
 
 function buscaCi() {
