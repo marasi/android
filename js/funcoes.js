@@ -8,10 +8,14 @@ function checkConn() {
 		if(e.type == "offline") {
 			$.mobile.changePage($('#conn'), 'pop');
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-			document.addEventListener("backbutton", backButton, false );
+			document.addEventListener("backbutton", function(){
+				e.preventDefault();
+			}, false );
 		}else{
 			history.back();
-			document.addEventListener("backbutton", function(){history.back()}, false );
+			document.addEventListener("backbutton", function(){
+				navigator.app.backHistory();
+			}, false );
 		}		
 	}
 } 
