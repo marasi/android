@@ -4,18 +4,14 @@ function checkConn() {
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
+		var backButton = function(){e.preventDefault();}
 		if(e.type == "offline") {
 			$.mobile.changePage($('#conn'), 'pop');
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-			document.addEventListener("backbutton", function (e) {
-				e.preventDefault();
-			}, false );
+			document.addEventListener("backbutton", backButton, false );
 		}else{
-			//$.mobile.changePage($('#menu'), 'pop');
 			history.back();
-			document.removeEventListener("backbutton", function (e) {
-				e.preventDefault();
-			}, false );
+			document.removeEventListener("backbutton", backButton, false );
 		}		
 	}
 } 
