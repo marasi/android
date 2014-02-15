@@ -4,7 +4,6 @@ function checkConn() {
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
-		//if($.mobile.activePage.attr("id") != "conn"){
 		if(e.type == "offline") {
 			$.mobile.changePage($('#conn'), 'pop');
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
@@ -12,9 +11,9 @@ function checkConn() {
 				e.preventDefault();
 			}, false );
 		}else{
-			$.mobile.changePage($('#menu'), 'pop');
+			//$.mobile.changePage($('#menu'), 'pop');
+			history.back();
 		}		
-		//}
 	}
 } 
 /******************************************************************/
