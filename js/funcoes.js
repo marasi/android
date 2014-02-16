@@ -20,7 +20,7 @@ function checkConn() {
 			  return false;
 		  }
 	  }else{
-		  if(isOnline){
+		  if(isOnline != 0){
 			  clearInterval(isOnline);
 			  isOnline = 0;
 			  alert('clearInterval: '+isOnline+' - contador: '+contador);
