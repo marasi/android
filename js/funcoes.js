@@ -8,9 +8,10 @@ function checkConn() {
 	document.addEventListener("offline", toggleCon, false);
 	
 	function toggleCon(e) {
+	  var isOnline = 0;
 	  if(e.type == "offline") {
 		  if($.mobile.activePage.attr("id") != "conn"){
-			  var isOnline = setInterval(function () {				
+			  	  isOnline = setInterval(function () {				
 				  $.mobile.changePage($('#conn'), 'pop');
 				  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
 				  contador++;
