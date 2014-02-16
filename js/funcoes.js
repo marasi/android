@@ -8,19 +8,21 @@ function checkConn() {
 	
 	function toggleCon(e) {	  	  
 		if(e.type == "offline") {
-			isOnline = setInterval(function () {
-				if($.mobile.activePage.attr("id") != "conn"){				
-				  $.mobile.changePage($('#conn'), 'pop');
-				  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				  contador++;
-				  console.log(contador);
-				}
-			}, 1000);		  
+			if($.mobile.activePage.attr("id") != "conn"){
+				isOnline = setInterval(function () {							
+					  $.mobile.changePage($('#conn'), 'pop');
+					  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+					  contador++;
+					  console.log(contador);					
+				}, 1000);	
+			}else{
+				if(isOnline)clearInterval(isOnline);	
+			}
 	  }else{
 		  if(isOnline){
 			  clearInterval(isOnline);
-			  alert('clearInterval: '+isOnline);
-		  }else{alert('Erro clear interval: '+isOnline);}
+			  alert('clearInterval: '+isOnline+'count: '+contador);
+		  }else{alert('Erro clear interval: '+isOnline+'count: '+contador);}
 		  $.mobile.changePage($('#menu'), 'pop');
 	  }		
 	}
