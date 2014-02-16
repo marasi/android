@@ -1,7 +1,7 @@
 /*check internet connection *****************************************************************/
 document.addEventListener("deviceready", checkConn, false);
 var isOnline = 0;
-
+var contador = 0;
 function checkConn() {
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
@@ -12,6 +12,8 @@ function checkConn() {
 				if($.mobile.activePage.attr("id") != "conn"){				
 				  $.mobile.changePage($('#conn'), 'pop');
 				  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+				  contador++;
+				  console.log(contador);
 				}
 			}, 1000);		  
 	  }else{
