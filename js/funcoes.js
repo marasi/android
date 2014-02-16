@@ -8,7 +8,7 @@ function checkConn() {
 	document.addEventListener("offline", toggleCon, false);
 	
 	function toggleCon(e) {
-	  var isOnline = 0;
+	  var isOnline = null;
 	  if(e.type == "offline") {
 		  if($.mobile.activePage.attr("id") != "conn"){
 			  	  isOnline = setInterval(function () {				
@@ -17,16 +17,14 @@ function checkConn() {
 				  contador++;
 			  
 			  }, 1);
-			  return false;
 		  }
 	  }else{
-		  if(isOnline != 0){
+		  if(isOnline){
 			  clearInterval(isOnline);
-			  isOnline = 0;
+			  isOnline = null;
 			  alert('clearInterval: '+isOnline+' - contador: '+contador);
 		  }else{alert('Erro clear interval: '+isOnline+', cont: '+contador);}
 		  $.mobile.changePage($('#menu'), 'pop');
-		  return false;
 	  }		
 	}
 }
