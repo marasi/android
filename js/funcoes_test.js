@@ -1,41 +1,25 @@
 /*check internet connection *****************************************************************/
-// Wait for device API libraries to load
 document.addEventListener("deviceready", checkConn, false);
-var conni = 0;
-var togglei = 0;
 function checkConn() {
-	conni++;
-	alert('CheckConn: '+conni);
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
 	function toggleCon(e) {
-		//if($.mobile.activePage.attr("id") != "conn"){
-			togglei++;
-			alert('toggleCon: '+togglei);
-			if(e.type == "offline") {
-				alert('Offline');
-				var isOnline = setInterval(function () {				
-					<!--alert(states[networkState]);-->
-					$.mobile.changePage($('#conn'), 'pop');
-					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				
-				}, 1);
-				return false;
-			}else{
-				<!--alert(states[networkState]);-->
-				alert('Online');
-				if(isOnline != ""){
-					clearInterval(isOnline);
-					isOnline = "";
-					alert('clearInterval to 0!');
-				}else{alert('fuck!');}
-				$.mobile.changePage($('#menu'), 'pop');
-				return false;
-			}		
-		//}
+		if(e.type == "offline") {
+			$.mobile.changePage($('#conn'), 'pop');
+			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+			document.addEventListener("backbutton", function(e){
+				e.preventDefault();
+			}, false );
+		}else{			
+			document.addEventListener("backbutton", function(e){
+				e.preventDefault();
+				//navigator.app.backHistory();
+				history.back();
+			}, true );
+			history.back();
+		}		
 	}
-}
- 
+} 
 /******************************************************************/
 
 function buscaCi() {

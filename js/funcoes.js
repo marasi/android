@@ -1,25 +1,35 @@
 /*check internet connection *****************************************************************/
+// Wait for device API libraries to load
 document.addEventListener("deviceready", checkConn, false);
+
 function checkConn() {
+	var contador=0;
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
+	
 	function toggleCon(e) {
-		if(e.type == "offline") {
-			$.mobile.changePage($('#conn'), 'pop');
-			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-			document.addEventListener("backbutton", function(e){
-				e.preventDefault();
-			}, false );
-		}else{			
-			document.addEventListener("backbutton", function(e){
-				e.preventDefault();
-				//navigator.app.backHistory();
-				history.back();
-			}, true );
-			history.back();
-		}		
+	  if(e.type == "offline") {
+		  if($.mobile.activePage.attr("id") != "conn"){
+			  var isOnline = setInterval(function () {				
+				  $.mobile.changePage($('#conn'), 'pop');
+				  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+				  contador++;
+			  
+			  }, 1);
+			  return false;
+		  }
+	  }else{
+		  if(isOnline){
+			  clearInterval(isOnline);
+			  isOnline = 0;
+			  alert('clearInterval: '+isOnline+' - contador: '+contador);
+		  }else{alert('Erro clear interval!');}
+		  $.mobile.changePage($('#menu'), 'pop');
+		  return false;
+	  }		
 	}
-} 
+}
+ 
 /******************************************************************/
 
 function buscaCi() {
