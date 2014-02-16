@@ -23,7 +23,7 @@ function checkConn() {
 			  clearInterval(isOnline);
 			  isOnline = 0;
 			  alert('clearInterval: '+isOnline+' - contador: '+contador);
-		  }else{alert('Erro clear interval!');}
+		  }else{alert('Erro clear interval: '+isOnline);}
 		  $.mobile.changePage($('#menu'), 'pop');
 		  return false;
 	  }		
