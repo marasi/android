@@ -16,11 +16,13 @@ function checkConn() {
 					  console.log(contador);					
 				}, 1000);	
 			}else{
-				if(isOnline)clearInterval(isOnline);	
+				if(isOnline)clearInterval(isOnline);
+				isOnline = 0;	
 			}
 	  }else{
 		  if(isOnline){
 			  clearInterval(isOnline);
+			  isOnline = 0;
 			  alert('clearInterval: '+isOnline+'count: '+contador);
 		  }else{alert('Erro clear interval: '+isOnline+'count: '+contador);}
 		  $.mobile.changePage($('#menu'), 'pop');
