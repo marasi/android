@@ -1,7 +1,7 @@
 /*check internet connection *****************************************************************/
-document.addEventListener("deviceready", checkConn, false);
 var isOnline = 0;
 var contador = 0;
+document.addEventListener("deviceready", checkConn, false);
 function checkConn() {
 	document.addEventListener("online", toggleCon, false);
 	document.addEventListener("offline", toggleCon, false);
@@ -16,14 +16,16 @@ function checkConn() {
 					  console.log(contador);					
 				}, 1000);	
 			}else{
+				alert('clearInterval !Conn: '+isOnline+'count: '+contador);
 				if(isOnline)clearInterval(isOnline);
 				isOnline = 0;	
 			}
 	  }else{
 		  if(isOnline){
+			  alert('clearInterval: '+isOnline+'count: '+contador);
 			  clearInterval(isOnline);
 			  isOnline = 0;
-			  alert('clearInterval: '+isOnline+'count: '+contador);
+			  
 		  }else{alert('Erro clear interval: '+isOnline+'count: '+contador);}
 		  $.mobile.changePage($('#menu'), 'pop');
 	  }		
