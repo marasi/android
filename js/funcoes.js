@@ -9,12 +9,12 @@ function checkConn() {
 	function toggleCon(e) {	  	  
 		if(e.type == "offline") {
 			//if($.mobile.activePage.attr("id") != "conn"){
-				isOnline = setInterval(function () {							
+				//isOnline = setInterval(function () {							
 					  $.mobile.changePage($('#conn'), 'pop');
 					  $("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
 					  contador++;
 					  console.log(contador);					
-				}, 1000);	
+				//}, 1000);	
 			/*}else{
 				alert('clearInterval !Conn: '+isOnline+'count: '+contador);
 				if(isOnline)clearInterval(isOnline);
