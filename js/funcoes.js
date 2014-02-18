@@ -10,8 +10,7 @@ function checkConn() {
 			//if($.mobile.activePage.attr("id") != "conn"){
 			$('#conn').on('pagehide', function(event, ui){							
 				$.mobile.changePage($('#conn'), 'pop');
-				$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				checkConn();				
+				$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');		
 			});
 			
 			$.mobile.changePage($('#conn'), 'pop');
