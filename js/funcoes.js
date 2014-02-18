@@ -16,9 +16,11 @@ function checkConn() {
 			$.mobile.changePage($('#conn'), 'pop');
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');	
 			
-	  }else{
-		  $.mobile.changePage($('#menu'), 'pop');
-	  }		
+		}else{
+			$('#conn').on('pagehide', function(event, ui){	
+			  	$.mobile.changePage($('#menu'), 'pop');
+			});
+		}		
 	}
 } 
 /******************************************************************/
