@@ -1,5 +1,4 @@
 /*check internet connection *****************************************************************/
-
 document.addEventListener("deviceready", checkConn, false);
 function checkConn() {
 	document.addEventListener("online", toggleCon, false);
@@ -11,18 +10,12 @@ function checkConn() {
 			$('#conn').on('pagehide', function(event, ui){							
 				$.mobile.changePage($('#conn'), 'pop');
 				$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');		
-			});
-			
+			});			
 			$.mobile.changePage($('#conn'), 'pop');
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');	
 			
 		}else{
-			//$('#conn').unbind('pagehide.remove');
-			
-			//$('#conn').on('pagehide', null, false);
-			//$('#conn').on('pagehide', function(event, ui){
 			$('#conn').unbind('pagehide');
-			//});
 			$.mobile.changePage($('#menu'), 'pop');
 		}		
 	}
