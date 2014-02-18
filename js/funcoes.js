@@ -20,9 +20,9 @@ function checkConn() {
 			//$('#conn').unbind('pagehide.remove');
 			
 			//$('#conn').on('pagehide', null, false);
-			$('#conn').on('pagehide', function(event, ui){
-				$('#conn').unbind('pagehide');
-			});
+			//$('#conn').on('pagehide', function(event, ui){
+			$('#conn').unbind('pagehide');
+			//});
 			$.mobile.changePage($('#menu'), 'pop');
 		}		
 	}
