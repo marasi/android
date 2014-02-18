@@ -17,10 +17,10 @@ function checkConn() {
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');	
 			
 		}else{
-			$('#conn').unbind('pagehide.remove');
-			$.mobile.changePage($('#menu'), 'pop');
-			//$('#conn').on('pagehide', false, false);
+			//$('#conn').unbind('pagehide.remove');
 			
+			$('#conn').on('pagehide', null, false);
+			$.mobile.changePage($('#menu'), 'pop');
 		}		
 	}
 } 
