@@ -8,11 +8,10 @@ function checkConn() {
 	function toggleCon(e) {	  	  
 		if(e.type == "offline") {
 			//if($.mobile.activePage.attr("id") != "conn"){
-			$('#conn').pagecontainer({
-				hide: function(){				
-					$.mobile.changePage($('#conn'), 'pop');
-					$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
-				}
+			$('#conn').on('pagehide', function(event, ui){							
+				$.mobile.changePage($('#conn'), 'pop');
+				$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');
+				checkConn();				
 			});
 			
 			$.mobile.changePage($('#conn'), 'pop');
