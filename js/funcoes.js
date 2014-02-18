@@ -21,7 +21,7 @@ function checkConn() {
 			
 			//$('#conn').on('pagehide', null, false);
 			$('#conn').on('pagehide', function(event, ui){
-				$(event.target).remove();
+				$(event).remove();
 			});
 			$.mobile.changePage($('#menu'), 'pop');
 		}		
