@@ -19,7 +19,10 @@ function checkConn() {
 		}else{
 			//$('#conn').unbind('pagehide.remove');
 			
-			$('#conn').on('pagehide', null, false);
+			//$('#conn').on('pagehide', null, false);
+			$('#conn').on('pagehide', function(event, ui){
+				$(event.target).remove();
+			});
 			$.mobile.changePage($('#menu'), 'pop');
 		}		
 	}
