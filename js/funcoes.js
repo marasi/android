@@ -17,9 +17,8 @@ function checkConn() {
 			$("#connResult").html('<img src="images/offline.png" id="offlineIcon"/>Sem conexão com a Internet');	
 			
 		}else{
-			$('#conn').on('pagehide', function(event, ui){	
-			  	$.mobile.changePage($('#menu'), 'pop');
-			});
+			$.mobile.changePage($('#menu'), 'pop');
+			$('#conn').on('pagehide', function(event, ui){});
 		}		
 	}
 } 
